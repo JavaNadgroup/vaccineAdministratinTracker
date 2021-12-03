@@ -4,6 +4,7 @@
  */
 package org.health.administration;
 
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -29,6 +30,17 @@ public class SystemsAdministration extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        //get form data
+        String email = request.getParameter("email");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+        request.setAttribute("email",email);
+        request.setAttribute("username",username);
+        request.setAttribute("password",password);
+        
+        RequestDispatcher rs=request.getRequestDispatcher("adminRegister.jsp");
+        rs.forward(request, response);
+ 
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -37,7 +49,9 @@ public class SystemsAdministration extends HttpServlet {
             out.println("<title>Servlet SystemsAdministration</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet SystemsAdministration at " + request.getContextPath() + "</h1>");
+            out.println("<p>email " + email + "</p>");
+            out.println("<p>username " + username + "</p>");
+            out.println("<p>password " + password + "</p>");
             out.println("</body>");
             out.println("</html>");
         }

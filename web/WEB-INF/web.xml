@@ -54,4 +54,12 @@
             30
         </session-timeout>
     </session-config>
+    
+    
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/AdminReg.tld</tag-uri>
+            <tag-location>C:/Users/ogrey/Desktop/vaccinationTracker/web/WEB-INF/tlds/AdminReg.tld</tag-location>
+        </taglib>
+    </tag-config>
 </web-app>

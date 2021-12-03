@@ -43,7 +43,7 @@
             </section>
         </main>
          <div class="max-w-lg mx-auto text-center">
-            <p class="text-white">Want to become an Admin? <a href="${pageContext.request.contextPath}/adminRegister.jsp" class="font-bold hover:underline">Sign up</a>.</p>
+            <p class="text-white">Want to become an Admin? <a href="${pageContext.request.contextPath}/AdminRegistrationForm.jsp" class="font-bold hover:underline">Sign up</a>.</p>
         </div>
     </body>
 </html>
