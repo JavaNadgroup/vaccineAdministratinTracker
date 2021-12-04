@@ -4,14 +4,20 @@
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
     
+    
     <servlet>
         <servlet-name>HealthCenterAdministration</servlet-name>
         <servlet-class>org.health.health.HealthCenterAdministration</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AdminLogin</servlet-name>
+        <servlet-class>org.health.administration.AdminLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HealthCenterAdministration</servlet-name>
         <url-pattern>/HealthCenterAdministration</url-pattern>
-    </servlet-mapping> 
+    </servlet-mapping>
+    
     
     <servlet>
         <servlet-name>VaccinationInventory</servlet-name>
@@ -22,6 +28,7 @@
         <url-pattern>/VaccinationInventory</url-pattern>
     </servlet-mapping>
     
+    
     <servlet>
         <servlet-name>VaccineAdministration</servlet-name>
         <servlet-class>org.health.administration.VaccineAdministration</servlet-class>
@@ -30,6 +37,7 @@
         <servlet-name>VaccineAdministration</servlet-name>
         <url-pattern>/VaccineAdministration</url-pattern>
     </servlet-mapping>
+    
     
     <servlet>
         <servlet-name>VaccinationBooking</servlet-name>
@@ -40,15 +48,19 @@
         <url-pattern>/VaccinationBooking</url-pattern>
     </servlet-mapping>
     
+    
     <servlet>
         <servlet-name>SystemsAdministration</servlet-name>
         <servlet-class>org.health.administration.SystemsAdministration</servlet-class>
     </servlet>
-   <servlet-mapping>
+    <servlet-mapping>
         <servlet-name>SystemsAdministration</servlet-name>
         <url-pattern>/SystemsAdministration</url-pattern>
     </servlet-mapping>
-    
+    <servlet-mapping>
+        <servlet-name>AdminLogin</servlet-name>
+        <url-pattern>/AdminLogin</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -59,7 +71,14 @@
     <tag-config>
         <taglib>
             <tag-uri>/WEB-INF/tlds/AdminReg.tld</tag-uri>
-            <tag-location>C:/Users/ogrey/Desktop/vaccinationTracker/web/WEB-INF/tlds/AdminReg.tld</tag-location>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/AdminReg.tld</tag-location>
+        </taglib>
+    </tag-config>
+    
+    <tag-config>
+         <taglib>
+            <tag-uri>/WEB-INF/tlds/AdminLogin.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/AdminLogin.tld</tag-location>
         </taglib>
     </tag-config>
 </web-app>

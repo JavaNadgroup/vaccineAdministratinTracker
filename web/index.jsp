@@ -26,14 +26,14 @@
             </section>
 
             <section class="mt-2">
-                <form class="flex flex-col" method="POST" action="#">
+                <form class="flex flex-col" method="POST" action="AdminLogin">
                     <div class="mb-6 pt-3 rounded bg-gray-200">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="user_name">Username</label>
-                        <input type="text" id="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-gray-600 transition duration-500 px-3 pb-3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="username">Admin Username</label>
+                        <input type="text" id="username" name="username" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-gray-600 transition duration-500 px-3 pb-3">
                     </div>
                     <div class="mb-6 pt-3 rounded bg-gray-200">
-                        <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Password</label>
-                        <input type="password" id="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-gray-600 transition duration-500 px-3 pb-3">
+                        <label class="block text-gray-700 text-sm font-bold mb-2 ml-3" for="password">Admin Password</label>
+                        <input type="password" id="password" name="password" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-gray-600 transition duration-500 px-3 pb-3">
                     </div>
                     <button class="bg-gray-600 hover:bg-gray-900 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200" type="submit">Login</button>
                     <div class="flex justify-end">
