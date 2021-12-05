@@ -15,6 +15,8 @@ import jakarta.servlet.jsp.JspWriter;
 import jakarta.servlet.jsp.PageContext;
 import jakarta.servlet.jsp.tagext.SimpleTagSupport;
 import static jakarta.servlet.jsp.tagext.Tag.SKIP_BODY;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import static jdk.internal.vm.vector.VectorSupport.insert;
 
 
@@ -67,12 +69,33 @@ public class AdminReg extends SimpleTagSupport {
         try{ 
            Class.forName("com.mysql.jdbc.Driver");
            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccinationtracker","root","");
-           stmt = conn.createStatement();
            
-           String sql = "INSERT INTO "+ table +"(email,username,password) VALUES('"+email+"','"+username+"','"+password+"')";
-           stmt.executeUpdate(sql);
+           String sql = "SELECT * FROM admins WHERE email =? and username =?";
+           PreparedStatement prps = conn.prepareStatement(sql);
            
-           System.out.print("Inserted records");
+           prps.setString(1, email);
+           prps.setString(2, username);
+           
+           ResultSet rslt = prps.executeQuery();
+           
+           if(rslt.next()){
+                out.println("<h1>Email and Username already taken...Login or Sign up with different email and password...</h1>");
+                out.println("<form action='http://localhost:8080/vaccinationTracker/index.jsp' method='post'>");
+                out.println("<button type='submit'>");
+                out.println("Go to Login");
+                out.println("</button>");
+            }else{
+                stmt = conn.createStatement();
+           
+                sql = "INSERT INTO "+ table +"(email,username,password) VALUES('"+email+"','"+username+"','"+password+"')";
+                stmt.executeUpdate(sql);
+                
+                out.print("<h1>Your Admin Account has been created Successfully..Please go back to login and login</h1>");
+                out.println("<form action='http://localhost:8080/vaccinationTracker/index.jsp' method='post'>");
+                out.println("<button type='submit'>");
+                out.println("Go back");
+                out.println("</button>");
+            }
        
        }catch(ClassNotFoundException | SQLException e){
                 out.println(e);

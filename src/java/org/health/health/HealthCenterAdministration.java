@@ -4,6 +4,7 @@
  */
 package org.health.health;
 
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -30,6 +31,17 @@ public class HealthCenterAdministration extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            String hospital_name = request.getParameter("hospital_name");
+            
+            if(hospital_name != ""){
+            request.setAttribute("hospital_name",hospital_name);
+            
+             RequestDispatcher rs=request.getRequestDispatcher("HealthCenter_to_db.jsp");
+            rs.forward(request, response);
+            
+        }else{
+            response.sendRedirect("http://localhost:8080/vaccinationTracker/AdminRegistrationForm.jsp");
+        }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");

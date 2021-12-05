@@ -16,6 +16,8 @@
         <%
             String username = request.getParameter("username");
             String password = request.getParameter("password");
+            
+            session.setAttribute("username", username);//setting the session
         %>
         <vaccination:select table="admins" username="${username}" password="${password}"/>
     </body>

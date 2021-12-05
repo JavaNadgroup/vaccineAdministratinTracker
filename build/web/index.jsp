@@ -13,6 +13,11 @@
         <link rel="stylesheet" href="tailwind.css"/>
     </head>
     <body class="bg-gradient-to-r from-gray-900 to-gray-400 min-h-screen pt-12 md:pt-20 pb-6 px-2 md:px-0" style="font-family:'Lato',sans-serif;">
+        <%
+            if (session.getAttribute("username") != null) {
+                session.invalidate();
+            }
+        %>
         <header class="max-w-lg mx-auto">
             <a href="${pageContext.request.contextPath}/index.jsp">
                 <h1 class="text-4xl font-bold text-white text-center">Vaccine Administration Tracker</h1>

@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/TagHandler.java to edit this template
  */
-package org.health.administration;
+package org.health.health;
 
 import java.io.IOException;
 import static java.lang.System.out;
@@ -23,8 +23,7 @@ import static jdk.internal.vm.vector.VectorSupport.insert;
  *
  * @author ogrey
  */
-public class AdminLoginHandler extends SimpleTagSupport {
-    
+public class HealthCenterToDb extends SimpleTagSupport {
     //JBDC driver name and database URL
    private final String driver = "com.mysql.jdbc.Driver";
 
@@ -40,16 +39,11 @@ public class AdminLoginHandler extends SimpleTagSupport {
    public void setTable(String table){
        this.table = table;
    }
-   
-   private String username;
-   public void setUsername(String username){
-       this.username = username;
-   }
-   
-   private String password;
-   public void setPassword(String password){
-       this.password = password;
-   }
+
+    public String hospital_name;
+    public void setHospital_name(String hospital_name) {
+        this.hospital_name = hospital_name;
+    }
 
     /**
      * Called by the container to invoke this tag. The implementation of this
@@ -60,40 +54,37 @@ public class AdminLoginHandler extends SimpleTagSupport {
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
         
-        if(username != null){
+        Statement stmt = null;
         try{ 
            Class.forName("com.mysql.jdbc.Driver");
            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccinationtracker","root","");
            
-           String sql = "SELECT * FROM admins WHERE username = ? and password = ?";
+           String sql = "SELECT * FROM hospitals WHERE name = ?";
            PreparedStatement prps = conn.prepareStatement(sql);
            
-           prps.setString(1, username);
-           prps.setString(2, password);
+           prps.setString(1, hospital_name);
            
            ResultSet rslt = prps.executeQuery();
            
            if(rslt.next()){
-                out.println("<h1>Logged in successfully</h1>");
-                out.println("<form action='http://localhost:8080/vaccinationTracker/AdminDashboard.jsp' method='post'>");
+                out.println("<h1>The Health Center you tried to register already exists...Register another hospital.</h1>");
+                out.println("<form action='http://localhost:8080/vaccinationTracker/AddHealthCenter.jsp' method='post'>");
                 out.println("<button type='submit'>");
-                out.println("Go to Dashboard");
+                out.println("Go back");
                 out.println("</button>");
-//            out.println("<button type='submit'>");
-//            out.println("Dashboard<br><br>");
-//            out.println("</button>");
             }else{
-                out.println("<h1>Failed to login. Please check your details</h1>");
-                out.println("<form action='http://localhost:8080/vaccinationTracker/' method='post'>");
+                stmt = conn.createStatement();
+                sql = "INSERT INTO "+ table +"(name) VALUES('"+hospital_name+"')";
+                stmt.executeUpdate(sql);
+                out.print("<h1>The Hospital has been added successfully......</h1>");
+                out.println("<form action='http://localhost:8080/vaccinationTracker/HealthCenterReg.jsp' method='post'>");
                 out.println("<button type='submit'>");
-                out.println("Go back to login page");
+                out.println("Go back");
                 out.println("</button>");
             }
-       
        }catch(ClassNotFoundException | SQLException e){
                 out.println(e);
        
-        }
-    }
-    }
-}
+   }
+   }}
+

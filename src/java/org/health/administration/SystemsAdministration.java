@@ -34,12 +34,18 @@ public class SystemsAdministration extends HttpServlet {
         String email = request.getParameter("email");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        request.setAttribute("email",email);
-        request.setAttribute("username",username);
-        request.setAttribute("password",password);
         
-        RequestDispatcher rs=request.getRequestDispatcher("adminRegister.jsp");
-        rs.forward(request, response);
+        if(email != "" && username != "" && password != ""){
+            request.setAttribute("email",email);
+            request.setAttribute("username",username);
+            request.setAttribute("password",password);
+            
+             RequestDispatcher rs=request.getRequestDispatcher("adminRegister.jsp");
+            rs.forward(request, response);
+            
+        }else{
+            response.sendRedirect("http://localhost:8080/vaccinationTracker/AdminRegistrationForm.jsp");
+        }
  
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
@@ -49,9 +55,6 @@ public class SystemsAdministration extends HttpServlet {
             out.println("<title>Servlet SystemsAdministration</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<p>email " + email + "</p>");
-            out.println("<p>username " + username + "</p>");
-            out.println("<p>password " + password + "</p>");
             out.println("</body>");
             out.println("</html>");
         }
