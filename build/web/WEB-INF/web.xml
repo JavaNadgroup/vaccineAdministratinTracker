@@ -3,8 +3,6 @@
     <welcome-file-list>
         <welcome-file>welcome.jsp</welcome-file>
     </welcome-file-list>
-    
-    
     <servlet>
         <servlet-name>HealthCenterAdministration</servlet-name>
         <servlet-class>org.health.health.HealthCenterAdministration</servlet-class>
@@ -13,12 +11,14 @@
         <servlet-name>AdminLogin</servlet-name>
         <servlet-class>org.health.administration.AdminLogin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PatientForm</servlet-name>
+        <servlet-class>org.health.administration.PatientForm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HealthCenterAdministration</servlet-name>
         <url-pattern>/HealthCenterAdministration</url-pattern>
     </servlet-mapping>
-    
-    
     <servlet>
         <servlet-name>VaccinationInventory</servlet-name>
         <servlet-class>org.health.vaccine.VaccinationInventory</servlet-class>
@@ -27,8 +27,6 @@
         <servlet-name>VaccinationInventory</servlet-name>
         <url-pattern>/VaccinationInventory</url-pattern>
     </servlet-mapping>
-    
-    
     <servlet>
         <servlet-name>VaccineAdministration</servlet-name>
         <servlet-class>org.health.administration.VaccineAdministration</servlet-class>
@@ -37,8 +35,6 @@
         <servlet-name>VaccineAdministration</servlet-name>
         <url-pattern>/VaccineAdministration</url-pattern>
     </servlet-mapping>
-    
-    
     <servlet>
         <servlet-name>VaccinationBooking</servlet-name>
         <servlet-class>org.health.booking.VaccinationBooking</servlet-class>
@@ -47,8 +43,6 @@
         <servlet-name>VaccinationBooking</servlet-name>
         <url-pattern>/VaccinationBooking</url-pattern>
     </servlet-mapping>
-    
-    
     <servlet>
         <servlet-name>SystemsAdministration</servlet-name>
         <servlet-class>org.health.administration.SystemsAdministration</servlet-class>
@@ -61,31 +55,37 @@
         <servlet-name>AdminLogin</servlet-name>
         <url-pattern>/AdminLogin</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PatientForm</servlet-name>
+        <url-pattern>/PatientForm</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    
-    
     <tag-config>
         <taglib>
             <tag-uri>/WEB-INF/tlds/AdminReg.tld</tag-uri>
             <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/AdminReg.tld</tag-location>
         </taglib>
     </tag-config>
-    
     <tag-config>
-         <taglib>
+        <taglib>
             <tag-uri>/WEB-INF/tlds/AdminLogin.tld</tag-uri>
             <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/AdminLogin.tld</tag-location>
         </taglib>
     </tag-config>
-    
     <tag-config>
-         <taglib>
+        <taglib>
             <tag-uri>/WEB-INF/tlds/HealthCenter_to_db.tld</tag-uri>
             <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/HealthCenter_to_db.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/patient_to_db.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/patient_to_db.tld</tag-location>
         </taglib>
     </tag-config>
 </web-app>

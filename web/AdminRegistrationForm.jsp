@@ -43,8 +43,5 @@
                 </form>
             </section>
         </main>
-<!--         <div class="max-w-lg mx-auto text-center mt-12 mb-6">
-            <p class="text-white">Want to become an Admin? <a href="${pageContext.request.contextPath}/adminRegister.jsp" class="font-bold hover:underline">Sign up</a>.</p>
-        </div>-->
     </body>
 </html>
