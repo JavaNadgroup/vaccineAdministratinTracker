@@ -5,8 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="/WEB-INF/tlds/No_of_patients.tld" prefix="vaccination" %>
-<!DOCTYPE html>.
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -29,7 +29,7 @@
     
     <%   
   
-    String username=(String)session.getAttribute("username");    //Getting Session Attribute
+    String name=(String)session.getAttribute("name");    //Getting Session Attribute
     %> 
 
     <!--Nav-->
@@ -43,18 +43,18 @@
             </div>
 
             <div class="flex flex-1 md:w-1/3 justify-center md:justify-start text-white px-2">
-                <h2 class="text-2xl font-bold text-white text-right">Vaccination Tracker Admin Dashboard</h2>
+                <h2 class="text-2xl font-bold text-white text-right">Welcome to the Dashboard</h2>
             </div>
 
             <div class="flex w-full pt-2 content-center justify-between md:w-1/3 md:justify-end">
                 <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
                     <li class="flex-1 md:flex-none md:mr-3">
                         <div class="relative inline-block">
-                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none"> <span class="pr-2"><i class="em em-robot_face"></i></span> <% out.print(username);  %> <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none"> <span class="pr-2"><i class="em em-robot_face"></i></span> <% out.print(name);  %> <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg></button>
                             <div id="myDropdown" class="dropdownlist absolute bg-gray-800 text-white right-0 mt-3 p-3 overflow-auto z-30 invisible">
                                 <div class="border border-gray-800"></div>
-                                <a href="index.jsp" class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
+                                <a href="welcome.jsp" class="p-2 hover:bg-gray-800 text-white text-sm no-underline hover:no-underline block"><i class="fas fa-sign-out-alt fa-fw"></i> Log Out</a>
                             </div>
                         </div>
                     </li>
@@ -72,23 +72,18 @@
             <div class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
                 <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
                     <li class="mr-3 flex-1">
-                        <a href="AdminDashboard.jsp" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
+                        <a href="PatientDashboard.jsp" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-green-500">
                             <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Home</span>
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
-                        <a href="HealthCenterReg.jsp" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
-                            <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Health Centers</span>
+                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
+                            <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Certificate</span>
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
                         <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
                             <i class="fa fa-envelope pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Messages</span>
-                        </a>
-                    </li>
-                    <li class="mr-3 flex-1">
-                        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
-                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Payments</span>
                         </a>
                     </li>
                 </ul>
@@ -114,8 +109,8 @@
                                 <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-600">Total Number of Patients</h5>
-                                <h3 class="font-bold text-3xl"><vaccination:select table="patients"/><span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h5 class="font-bold uppercase text-gray-600">Total Revenue</h5>
+                                <h3 class="font-bold text-3xl">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>

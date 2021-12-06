@@ -18,38 +18,38 @@ import static jakarta.servlet.jsp.tagext.Tag.SKIP_BODY;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import static jdk.internal.vm.vector.VectorSupport.insert;
-
 /**
  *
  * @author ogrey
  */
-public class AdminLoginHandler extends SimpleTagSupport {
+public class PatientAuth extends SimpleTagSupport {
     
     //JBDC driver name and database URL
-   private final String driver = "com.mysql.jdbc.Driver";
+    private final String driver = "com.mysql.jdbc.Driver";
 
-   private final String database_type = "mysql";
+    private final String database_type = "mysql";
 
-   private final String database_url = "\"jdbc:mysql://localhost:3306/vaccinationtracker\"";
+    private final String database_url = "\"jdbc:mysql://localhost:3306/vaccinationtracker\"";
 
-   private final String database_username = "root";
+    private final String database_username = "root";
 
-   private final String database_password = "";
-   
-   private String table;
-   public void setTable(String table){
-       this.table = table;
-   }
-   
-   private String username;
-   public void setUsername(String username){
-       this.username = username;
-   }
-   
-   private String password;
-   public void setPassword(String password){
-       this.password = password;
-   }
+    private final String database_password = "";
+
+    private String table;
+    public void setTable(String table){
+        this.table = table;
+    }
+
+    private String name;
+    private String nin;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setNin(String nin) {
+        this.nin = nin;
+    }
+    
 
     /**
      * Called by the container to invoke this tag. The implementation of this
@@ -60,22 +60,22 @@ public class AdminLoginHandler extends SimpleTagSupport {
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
         
-        if(username != "" && password !=""){
+        if(name != "" && nin !=""){
         try{ 
            Class.forName("com.mysql.jdbc.Driver");
            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccinationtracker","root","");
            
-           String sql = "SELECT * FROM admins WHERE username = ? and password = ?";
+           String sql = "SELECT * FROM patients WHERE name = ? and nin = ?";
            PreparedStatement prps = conn.prepareStatement(sql);
            
-           prps.setString(1, username);
-           prps.setString(2, password);
+           prps.setString(1, name);
+           prps.setString(2, nin);
            
            ResultSet rslt = prps.executeQuery();
            
            if(rslt.next()){
                 out.println("<h1>Logged in successfully</h1>");
-                out.println("<form action='http://localhost:8080/vaccinationTracker/AdminDashboard.jsp' method='post'>");
+                out.println("<form action='http://localhost:8080/vaccinationTracker/PatientDashboard.jsp' method='post'>");
                 out.println("<button type='submit'>");
                 out.println("Go to Dashboard");
                 out.println("</button>");
@@ -84,7 +84,7 @@ public class AdminLoginHandler extends SimpleTagSupport {
 //            out.println("</button>");
             }else{
                 out.println("<h1>Failed to login. Please check your details</h1>");
-                out.println("<form action='http://localhost:8080/vaccinationTracker/' method='post'>");
+                out.println("<form action='http://localhost:8080/vaccinationTracker/patientLogin.jsp' method='post'>");
                 out.println("<button type='submit'>");
                 out.println("Go back to login page");
                 out.println("</button>");

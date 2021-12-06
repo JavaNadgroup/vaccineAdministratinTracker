@@ -5,8 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@taglib uri="/WEB-INF/tlds/No_of_patients.tld" prefix="vaccination" %>
+<!DOCTYPE html>.
 
 <head>
     <meta charset="UTF-8">
@@ -114,8 +114,8 @@
                                 <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-600">Total Revenue</h5>
-                                <h3 class="font-bold text-3xl">$3249 <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                                <h5 class="font-bold uppercase text-gray-600">Total Number of Patients</h5>
+                                <h3 class="font-bold text-3xl"><vaccination:select table="patients"/><span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>

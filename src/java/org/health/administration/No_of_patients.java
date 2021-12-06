@@ -23,9 +23,8 @@ import static jdk.internal.vm.vector.VectorSupport.insert;
  *
  * @author ogrey
  */
-public class AdminLoginHandler extends SimpleTagSupport {
-    
-    //JBDC driver name and database URL
+public class No_of_patients extends SimpleTagSupport {
+     //JBDC driver name and database URL
    private final String driver = "com.mysql.jdbc.Driver";
 
    private final String database_type = "mysql";
@@ -40,16 +39,6 @@ public class AdminLoginHandler extends SimpleTagSupport {
    public void setTable(String table){
        this.table = table;
    }
-   
-   private String username;
-   public void setUsername(String username){
-       this.username = username;
-   }
-   
-   private String password;
-   public void setPassword(String password){
-       this.password = password;
-   }
 
     /**
      * Called by the container to invoke this tag. The implementation of this
@@ -60,40 +49,35 @@ public class AdminLoginHandler extends SimpleTagSupport {
     public void doTag() throws JspException, IOException {
         JspWriter out = getJspContext().getOut();
         
-        if(username != "" && password !=""){
+        Statement stmt = null;
         try{ 
            Class.forName("com.mysql.jdbc.Driver");
            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaccinationtracker","root","");
-           
-           String sql = "SELECT * FROM admins WHERE username = ? and password = ?";
-           PreparedStatement prps = conn.prepareStatement(sql);
-           
-           prps.setString(1, username);
-           prps.setString(2, password);
-           
-           ResultSet rslt = prps.executeQuery();
-           
-           if(rslt.next()){
-                out.println("<h1>Logged in successfully</h1>");
-                out.println("<form action='http://localhost:8080/vaccinationTracker/AdminDashboard.jsp' method='post'>");
-                out.println("<button type='submit'>");
-                out.println("Go to Dashboard");
-                out.println("</button>");
-//            out.println("<button type='submit'>");
-//            out.println("Dashboard<br><br>");
-//            out.println("</button>");
-            }else{
-                out.println("<h1>Failed to login. Please check your details</h1>");
-                out.println("<form action='http://localhost:8080/vaccinationTracker/' method='post'>");
-                out.println("<button type='submit'>");
-                out.println("Go back to login page");
-                out.println("</button>");
-            }
+           Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+            ResultSet.CONCUR_UPDATABLE);
+            st = conn.createStatement();
+            String sql = "SELECT * FROM patients";
+            ResultSet rs = st.executeQuery(sql);
+            
+            sql = "SELECT COUNT(*) FROM patients";
+            rs = st.executeQuery(sql);
+            // get the number of rows from the result set
+            rs.next();
+            int rowCount = rs.getInt(1);
+            out.println(rowCount);
+
+            rs.close();
+            st.close();
+            conn.close();
+//            stmt = conn.createStatement();
+//           
+//            String sql = "SELECT COUNT(*) FROM '"+table+"'";
+//
+//            int no_of_patients = stmt.executeUpdate(sql);
+//            out.println(no_of_patients);
        
        }catch(ClassNotFoundException | SQLException e){
                 out.println(e);
-       
-        }
-    }
-    }
+       }
+   }
 }
