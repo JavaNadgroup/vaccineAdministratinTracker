@@ -122,4 +122,16 @@
             <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/Bookings_to_database.tld</tag-location>
         </taglib>
     </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/No_of_bookings.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/No_of_bookings.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/No_of_admins.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/No_of_admins.tld</tag-location>
+        </taglib>
+    </tag-config>
 </web-app>

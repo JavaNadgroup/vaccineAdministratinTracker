@@ -5,7 +5,9 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="/WEB-INF/tlds/No_of_bookings.tld" prefix="bookings" %>
 <%@taglib uri="/WEB-INF/tlds/No_of_patients.tld" prefix="vaccination" %>
+<%@taglib uri="/WEB-INF/tlds/No_of_admins.tld" prefix="admins" %>
 <!DOCTYPE html>.
 
 <head>
@@ -81,16 +83,6 @@
                             <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Health Centers</span>
                         </a>
                     </li>
-                    <li class="mr-3 flex-1">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
-                            <i class="fa fa-envelope pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Messages</span>
-                        </a>
-                    </li>
-                    <li class="mr-3 flex-1">
-                        <a href="#" class="block py-1 md:py-3 pl-0 md:pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-red-500">
-                            <i class="fa fa-wallet pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Payments</span>
-                        </a>
-                    </li>
                 </ul>
             </div>
 
@@ -129,8 +121,8 @@
                                 <div class="rounded-full p-5 bg-pink-600"><i class="fas fa-users fa-2x fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-600">Total Users</h5>
-                                <h3 class="font-bold text-3xl">249 <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                                <h5 class="font-bold uppercase text-gray-600">Number of bookings</h5>
+                                <h3 class="font-bold text-3xl"><bookings:select table="bookings"/><span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
                             </div>
                         </div>
                     </div>
@@ -144,15 +136,15 @@
                                 <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-inverse"></i></div>
                             </div>
                             <div class="flex-1 text-right md:text-center">
-                                <h5 class="font-bold uppercase text-gray-600">New Users</h5>
-                                <h3 class="font-bold text-3xl">2 <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                                <h5 class="font-bold uppercase text-gray-600">Number of Administrators</h5>
+                                <h3 class="font-bold text-3xl"><admins:select table="admins"/><span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
                             </div>
                         </div>
                     </div>
                     <!--/Metric Card-->
                 </div>
-                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <!--Metric Card-->
+<!--                <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+                    Metric Card
                     <div class="bg-gradient-to-b from-blue-200 to-blue-100 border-b-4 border-blue-500 rounded-lg shadow-xl p-5">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
@@ -164,10 +156,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--/Metric Card-->
+                    /Metric Card
                 </div>
                 <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <!--Metric Card-->
+                    Metric Card
                     <div class="bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl p-5">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
@@ -179,10 +171,10 @@
                             </div>
                         </div>
                     </div>
-                    <!--/Metric Card-->
+                    /Metric Card
                 </div>
                 <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <!--Metric Card-->
+                    Metric Card
                     <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
                         <div class="flex flex-row items-center">
                             <div class="flex-shrink pr-4">
@@ -194,8 +186,8 @@
                             </div>
                         </div>
                     </div>
-                    <!--/Metric Card-->
-                </div>
+                    /Metric Card
+                </div>-->
             </div>
         </div>
     </div>
