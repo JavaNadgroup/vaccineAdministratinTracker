@@ -3,11 +3,6 @@
   <tlib-version>1.0</tlib-version>
   <short-name>vaccination</short-name>
   <uri>/WEB-INF/tlds/AdminReg</uri>
-  <display-name>Database</display-name>
-  <description>
-      A set of tags for working with mySQL database access
-  </description>
- 
     <tag>
         <name>insert</name>
         <tag-class>org.health.administration.AdminReg</tag-class>

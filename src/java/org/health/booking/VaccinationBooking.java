@@ -4,6 +4,7 @@
  */
 package org.health.booking;
 
+import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
@@ -29,6 +30,26 @@ public class VaccinationBooking extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+            String nin = request.getParameter("nin");
+            String email = request.getParameter("email");
+            String name = request.getParameter("name");
+            String date = request.getParameter("date");
+            String  hospital = request.getParameter("hospital");
+            String vaccine = request.getParameter("vaccine");
+            
+            if(nin !="" && email !="" && name !="" && date !="" && hospital !="" && vaccine !=""){
+            request.setAttribute("nin", nin);
+            request.setAttribute("email", email);
+            request.setAttribute("name", name);
+            request.setAttribute("date", date);
+            request.setAttribute("hospital", hospital);
+            request.setAttribute("vaccine", vaccine);
+            
+            RequestDispatcher rs=request.getRequestDispatcher("Booking_to_database.jsp");
+            rs.forward(request, response);
+            }else{
+                response.sendRedirect("http://localhost:8080/vaccinationTracker/booking.jsp");
+            }
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");

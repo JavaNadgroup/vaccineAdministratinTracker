@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
   <tlib-version>1.0</tlib-version>
-  <short-name>vaccination</short-name>
-  <uri>/WEB-INF/tlds/AdminReg</uri>
-    <tag>
-        <name>insert</name>
-        <tag-class>org.health.administration.AdminReg</tag-class>
-        <body-content>empty</body-content>
-        <attribute>
+  <short-name>bookings_to_database</short-name>
+  <uri>/WEB-INF/tlds/Bookings_to_database</uri>
+  <tag>
+    <name>insert</name>
+    <tag-class>org.health.booking.Bookings_to_database</tag-class>
+    <body-content>empty</body-content>
+    <attribute>
             <name>driver</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
@@ -42,29 +42,35 @@
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
-      
-        <attribute>
-            <name>email</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        
-        <attribute>
-            <name>username</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-        
-        <attribute>
-            <name>password</name>
-            <required>false</required>
-            <rtexprvalue>true</rtexprvalue>
-        </attribute>
-   </tag>
-     
-    <tag>
-        <name>close</name>
-        <tag-class>org.health.administration.AdminReg</tag-class>
-        <body-content>empty</body-content>
-    </tag>
+    <attribute>
+      <name>nin</name>
+      <rtexprvalue>true</rtexprvalue>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>email</name>
+      <rtexprvalue>true</rtexprvalue>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>name</name>
+      <rtexprvalue>true</rtexprvalue>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>date</name>
+      <rtexprvalue>true</rtexprvalue>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>hospital</name>
+      <rtexprvalue>true</rtexprvalue>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+    <attribute>
+      <name>vaccine</name>
+      <rtexprvalue>true</rtexprvalue>
+      <rtexprvalue>true</rtexprvalue>
+    </attribute>
+  </tag>
 </taglib>
