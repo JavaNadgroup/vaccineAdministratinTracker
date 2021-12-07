@@ -23,6 +23,10 @@
         <servlet-name>Booking</servlet-name>
         <servlet-class>org.health.booking.Booking</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>MessageServlet</servlet-name>
+        <servlet-class>org.health.administration.MessageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HealthCenterAdministration</servlet-name>
         <url-pattern>/HealthCenterAdministration</url-pattern>
@@ -74,6 +78,10 @@
     <servlet-mapping>
         <servlet-name>Booking</servlet-name>
         <url-pattern>/Booking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MessageServlet</servlet-name>
+        <url-pattern>/MessageServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -144,6 +152,12 @@
         <taglib>
             <tag-uri>/WEB-INF/tlds/All_patients.tld</tag-uri>
             <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/All_patients.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/message_to_db.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/message_to_db.tld</tag-location>
         </taglib>
     </tag-config>
 </web-app>
