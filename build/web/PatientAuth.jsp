@@ -18,6 +18,7 @@
             String nin = request.getParameter("nin");
             
             session.setAttribute("name", name);//setting the session
+            session.setAttribute("nin", nin);//setting the session
         %>
         <vaccination:select table="patients" name="${name}" nin="${nin}"/>
     </body>

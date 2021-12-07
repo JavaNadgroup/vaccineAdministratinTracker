@@ -6,6 +6,7 @@
             <file>file:/D:/vaccinationTracker/src/java/org/health/administration/PatientAuth.java</file>
             <file>file:/D:/vaccinationTracker/web/Booking_to_database.jsp</file>
             <file>file:/D:/vaccinationTracker/web/WEB-INF/tlds/patient_to_db.tld</file>
+            <file>file:/D:/vaccinationTracker/src/java/org/health/administration/No_of_admins.java</file>
             <file>file:/D:/vaccinationTracker/web/HealthCenter_to_db.jsp</file>
             <file>file:/D:/vaccinationTracker/src/java/org/health/administration/Patient_to_db.java</file>
             <file>file:/D:/vaccinationTracker/src/java/org/health/administration/VaccineAdministration.java</file>
@@ -13,9 +14,13 @@
             <file>file:/D:/vaccinationTracker/web/PatientAuth.jsp</file>
             <file>file:/D:/vaccinationTracker/src/java/org/health/administration/PatientLoginForm.java</file>
             <file>file:/D:/vaccinationTracker/web/HealthCenterReg.jsp</file>
+            <file>file:/D:/vaccinationTracker/src/java/org/health/administration/No_of_bookings.java</file>
             <file>file:/D:/vaccinationTracker/web/AdminRegistrationForm.jsp</file>
+            <file>file:/D:/vaccinationTracker/web/WEB-INF/tlds/No_of_admins.tld</file>
             <file>file:/D:/vaccinationTracker/src/java/org/health/administration/No_of_patients.java</file>
+            <file>file:/D:/vaccinationTracker/web/WEB-INF/tlds/Logged_in_patient_record.tld</file>
             <file>file:/D:/vaccinationTracker/web/PatientReg.jsp</file>
+            <file>file:/D:/vaccinationTracker/web/WEB-INF/tlds/No_of_bookings.tld</file>
             <file>file:/D:/vaccinationTracker/web/AdminDashboard.jsp</file>
             <file>file:/D:/vaccinationTracker/src/java/org/health/health/HealthCenterAdministration.java</file>
             <file>file:/D:/vaccinationTracker/web/booking.jsp</file>
@@ -37,6 +42,7 @@
             <file>file:/D:/vaccinationTracker/src/java/org/health/booking/Bookings_to_database.java</file>
             <file>file:/D:/vaccinationTracker/src/java/org/health/administration/AdminLoginHandler.java</file>
             <file>file:/D:/vaccinationTracker/web/PatientRegForm.jsp</file>
+            <file>file:/D:/vaccinationTracker/src/java/org/health/administration/Logged_in_patient_record.java</file>
             <file>file:/D:/vaccinationTracker/web/WEB-INF/tlds/HealthCenter_to_db.tld</file>
             <file>file:/D:/vaccinationTracker/src/java/org/health/booking/VaccinationBooking.java</file>
             <file>file:/D:/vaccinationTracker/web/PatientDashboard.jsp</file>
