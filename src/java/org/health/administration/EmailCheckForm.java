@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package org.health.health;
+package org.health.administration;
 
 import jakarta.servlet.RequestDispatcher;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import jakarta.servlet.http.HttpServletResponse;
  *
  * @author ogrey
  */
-public class HealthCenterAdministration extends HttpServlet {
+public class EmailCheckForm extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,26 +30,26 @@ public class HealthCenterAdministration extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String hospital_name = request.getParameter("hospital_name");
+        String email = request.getParameter("email");
         try (PrintWriter out = response.getWriter()) {
           
-            if(hospital_name != ""){
-            request.setAttribute("hospital_name",hospital_name);
+            if(email != ""){
+            request.setAttribute("email",email);
             
-             RequestDispatcher rs=request.getRequestDispatcher("HealthCenter_to_db.jsp");
+             RequestDispatcher rs=request.getRequestDispatcher("EmailResponse.jsp");
             rs.forward(request, response);
             
         }else{
-            response.sendRedirect("http://localhost:8080/vaccinationTracker/AdminRegistrationForm.jsp");
+            response.sendRedirect("http://localhost:8080/vaccinationTracker/bookingCheckform.jsp");
         }
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HealthCenterAdministration</title>");            
+            out.println("<title>Servlet EmailCheckForm</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HealthCenterAdministration at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet EmailCheckForm at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

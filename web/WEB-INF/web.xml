@@ -27,6 +27,10 @@
         <servlet-name>MessageServlet</servlet-name>
         <servlet-class>org.health.administration.MessageServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EmailCheckForm</servlet-name>
+        <servlet-class>org.health.administration.EmailCheckForm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HealthCenterAdministration</servlet-name>
         <url-pattern>/HealthCenterAdministration</url-pattern>
@@ -82,6 +86,10 @@
     <servlet-mapping>
         <servlet-name>MessageServlet</servlet-name>
         <url-pattern>/MessageServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EmailCheckForm</servlet-name>
+        <url-pattern>/EmailCheckForm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -158,6 +166,18 @@
         <taglib>
             <tag-uri>/WEB-INF/tlds/message_to_db.tld</tag-uri>
             <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/message_to_db.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/All_bookings.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/All_bookings.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/EmailResponse.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/EmailResponse.tld</tag-location>
         </taglib>
     </tag-config>
 </web-app>

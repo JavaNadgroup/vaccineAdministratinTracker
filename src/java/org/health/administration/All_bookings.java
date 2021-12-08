@@ -23,8 +23,9 @@ import static jdk.internal.vm.vector.VectorSupport.insert;
  *
  * @author ogrey
  */
-public class All_patients extends SimpleTagSupport {
-     //JBDC driver name and database URL
+public class All_bookings extends SimpleTagSupport {
+    
+   //JBDC driver name and database URL
    private final String driver = "com.mysql.jdbc.Driver";
 
    private final String database_type = "mysql";
@@ -39,6 +40,16 @@ public class All_patients extends SimpleTagSupport {
    public void setTable(String table){
        this.table = table;
    }
+
+    private String nin;
+    private String email;
+    public void setNin(String nin) {
+        this.nin = nin;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     /**
      * Called by the container to invoke this tag. The implementation of this
@@ -56,40 +67,40 @@ public class All_patients extends SimpleTagSupport {
            Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
             ResultSet.CONCUR_UPDATABLE);
             st = conn.createStatement();
-            String sql = "SELECT * FROM patients";
+            String sql = "SELECT * FROM bookings";
             ResultSet rs = st.executeQuery(sql);
                 
                 out.println("<table class='table-auto border border-2 p-10'>");
-                out.println("<thead class='border border-2 p-10'>");
-                out.println("<tr class='border border-2 px-5 py-2'>");
-                out.println("<th class='border border-2 px-10 py-2'>NIN</th>");
-                out.println("<th class='border border-2 px-20 py-2'>NAME</th>");
-                out.println("<th class='border border-2 px-5 py-2'>HOSPTIAL</th>");
-                out.println("<th class='border border-2 px-5 py-2'>DATE</th>");
-                out.println("<th class='border border-2 px-5 py-2'>BATCH_NUMBER</th>");
-                out.println("<th>VACCINE_ADMINISTERED</th>");
+                out.println("<thead class='border border-4 p-10'>");
+                out.println("<tr class='border border-4 px-5 py-2'>");
+                out.println("<th class='border border-4 px-10 py-2'>NIN</th>");
+                out.println("<th class='border border-4 px-20 py-2'>EMAILS</th>");
+                out.println("<th class='border border-4 px-20 py-2'>NAME</th>");
+                out.println("<th class='border border-4 px-5 py-2'>PREFERRED DATE FOR VACCINATION</th>");
+                out.println("<th class='border border-4 px-5 py-2'>PREFERRED HOSPITAL</th>");
+                out.println("<th class='border border-4 px-5 py-2'>PREFFERED VACCINE</th>");
                 out.println("</tr>");
                 out.println("</thead>");
                 while(rs.next()){
-                out.println("<tbody class='border border-2'>");
-                out.println("<tr class='border border-2'>");
-                out.println("<th class='border border-2'>");
+                out.println("<tbody class='border border-4'>");
+                out.println("<tr class='border border-4'>");
+                out.println("<th class='border border-4'>");
                 out.println(rs.getString("nin"));
                 out.println("</th>");
-                out.println("<th class='border border-2'>");
+                out.println("<th class='border border-4'>");
+                out.println(rs.getString("email"));
+                out.println("</th>");
+                out.println("<th class='border border-4'>");
                 out.println(rs.getString("name"));
                 out.println("</th>");
-                out.println("<th class='border border-2'>");
-                out.println(rs.getString("health_center"));
+                out.println("<th class='border border-4'>");
+                out.println(rs.getString("date"));
                 out.println("</th>");
-                out.println("<th class='border border-2'>");
-                out.println(rs.getString("date_of_administration"));
+                out.println("<th class='border border-4'>");
+                out.println(rs.getString("hospital"));
                 out.println("</th>");
-                out.println("<th class='border border-2'>");
-                out.println(rs.getString("batch_number"));
-                out.println("</th>");
-                out.println("<th class='border border-2'>");
-                out.println(rs.getString("vaccine_administered"));
+                out.println("<th class='border border-4'>");
+                out.println(rs.getString("vaccine"));
                 out.println("</th>");
                 out.println("</tr>");
                 }

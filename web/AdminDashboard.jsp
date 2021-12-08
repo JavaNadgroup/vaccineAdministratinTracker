@@ -9,6 +9,7 @@
 <%@taglib uri="/WEB-INF/tlds/No_of_patients.tld" prefix="vaccination" %>
 <%@taglib uri="/WEB-INF/tlds/No_of_admins.tld" prefix="admins" %>
 <%@taglib uri="/WEB-INF/tlds/All_patients.tld" prefix="All_patients" %>
+<%@taglib uri="/WEB-INF/tlds/All_bookings.tld" prefix="All_bookings" %>
 <!DOCTYPE html>.
 
 <head>
@@ -150,10 +151,14 @@
                     <!--/Metric Card-->
                 </div>
                 <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-                    <div class="flex justify-center my-4 font-bold">
+                    <div class="flex justify-center font-bold">
                         <h1 class="text-2xl">ALL PATIENTS</h1>
                     </div>
                     <All_patients:select table="patients"/>
+                    <div class="flex justify-center mt-10 font-bold">
+                        <h1 class="text-2xl">ALL BOOKINGS</h1>
+                    </div>
+                    <All_bookings:select table="bookings"/>
                     
                 </div>
 <!--                <div class="w-full md:w-1/2 xl:w-1/3 p-6">

@@ -42,7 +42,8 @@
         <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20" id="nav-content">
           <ul class="list-reset lg:flex justify-end flex-1 items-center">
             <li class="mr-3">
-                <a class="inline-block py-2 px-4 text-2xl hover:text-3xl font-bold no-underline" style="color:#d53369" href="booking.jsp">Bookings</a>
+                <a class="inline-block py-2 px-4 text-2xl hover:text-3xl font-bold no-underline text-black
+                   " href="booking.jsp">Bookings</a>
             </li>
             <a href="index.jsp"
             id="navAction"
@@ -107,16 +108,11 @@
             </a>
           </div>
           <div class="flex-1">
-            <p class="uppercase text-gray-500 md:mb-6">Links</p>
+            <p class="uppercase text-gray-500 md:mb-6">TRACK BOOKING</p>
             <ul class="list-reset mb-6">
               <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">FAQ</a>
+                <a href="bookingCheckform.jsp" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Check for an Email</a>
               </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Help</a>
-              </li>
-              <li class="mt-2 inline-block mr-2 md:block md:mr-0">
-                <a href="#" class="no-underline hover:underline text-gray-800 hover:text-pink-500">Support</a>
               </li>
             </ul>
           </div>
