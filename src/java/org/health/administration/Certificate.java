@@ -69,28 +69,6 @@ public class Certificate extends SimpleTagSupport {
             String sql = "SELECT * FROM patients WHERE nin = '"+nin+"' AND name = '"+name+"'";
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-//                out.println("<tbody class='border border-2'>");
-//                out.println("<tr class='border border-2'>");
-//                out.println("<th class='border border-2'>");
-//                out.println(rs.getString("nin"));
-//                out.println("</th>");
-//                out.println("<th class='border border-2'>");
-//                out.println(rs.getString("name"));
-//                out.println("</th>");
-//                out.println("<th class='border border-2'>");
-//                out.println(rs.getString("health_center"));
-//                out.println("</th>");
-//                out.println("<th class='border border-2'>");
-//                out.println(rs.getString("date_of_administration"));
-//                out.println("</th>");
-//                out.println("<th class='border border-2'>");
-//                out.println(rs.getString("batch_number"));
-//                out.println("</th>");
-//                out.println("<th class='border border-2'>");
-//                out.println(rs.getString("vaccine_administered"));
-//                out.println("</th>");
-//                out.println("</tr>");
-
                 out.print("<div class='max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20'>");
                 out.println("<div class='flex justify-center md:justify-end -mt-16'>");
                 out.println("<img class='w-20 h-20 object-cover rounded-full border-2 border-indigo-500' src='avatar.png'></div>");
@@ -98,19 +76,27 @@ public class Certificate extends SimpleTagSupport {
                 out.println("<h2 class='text-gray-800 text-3xl font-semibold'>");
                 out.println(rs.getString("health_center") +" Hospital");
                 out.println("</h2>");
-                out.println("<p class='mt-2 text-gray-600'>n a veritatis pariatur minus consequuntur!</p>");
-                out.println("</div>");
-                out.println("<div class='flex justify-end mt-4'>");
-                out.println("<a href='#' class='text-xl font-medium text-indigo-500'>John Doe</a>");
-                out.println("</div>");
-                out.println("</div>");
+                out.println("<h4 class='text-1x2 '><span class='text-1xl font-bold text-blue-500'>Patient Name: ");
+                out.println("</span>");
+                out.println(rs.getString("name"));
+                out.println("</h4>");
+                out.println("<h4 class='text-1x2 '><span class='text-1xl font-bold text-blue-500'>NIN Number: ");
+                out.println("</span>");
+                out.println(rs.getString("nin"));
+                out.println("</h4>");
+                out.println("<h4 class='text-1x2 '><span class='text-1xl font-bold text-blue-500'>Date of Vaccination: ");
+                out.println("</span>");
+                out.println(rs.getString("date_of_administration"));
+                out.println("</h4>");
+                out.println("<h4 class='text-1x2 '><span class='text-1xl font-bold text-blue-500'>Vaccine Type: ");
+                out.println("</span>");
+                out.println(rs.getString("vaccine_administered"));
+                out.println("</h4>");
+                out.println("<h4 class='text-1x2 '><span class='text-1xl font-bold text-blue-500'>Vaccine Batch Number: ");
+                out.println("</span>");
+                out.println(rs.getString("batch_number"));
+                out.println("</h4>");
             }
-//            stmt = conn.createStatement();
-//           
-//            String sql = "SELECT COUNT(*) FROM '"+table+"'";
-//
-//            int no_of_patients = stmt.executeUpdate(sql);
-//            out.println(no_of_patients);
        
        }catch(ClassNotFoundException | SQLException e){
                 out.println(e);
