@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
   <tlib-version>1.0</tlib-version>
-  <short-name>logged_in_patient_record</short-name>
-  <uri>/WEB-INF/tlds/Logged_in_patient_record</uri>
+  <short-name>certificate</short-name>
+  <uri>/WEB-INF/tlds/certificate</uri>
   <tag>
     <name>select</name>
-    <tag-class>org.health.administration.Logged_in_patient_record</tag-class>
+    <tag-class>org.health.administration.Certificate</tag-class>
     <body-content>empty</body-content>
     <attribute>
-            <name>driver</name>
+        <name>driver</name>
             <required>false</required>
             <rtexprvalue>true</rtexprvalue>
         </attribute>
@@ -49,26 +49,6 @@
     </attribute>
     <attribute>
       <name>name</name>
-      <rtexprvalue>true</rtexprvalue>
-      <required>false</required>
-    </attribute>
-    <attribute>
-      <name>hospital</name>
-      <required>false</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-    <attribute>
-      <name>date</name>
-      <required>false</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-    <attribute>
-      <name>batch_number</name>
-      <required>false</required>
-      <rtexprvalue>true</rtexprvalue>
-    </attribute>
-    <attribute>
-      <name>vaccine</name>
       <required>false</required>
       <rtexprvalue>true</rtexprvalue>
     </attribute>

@@ -152,8 +152,8 @@
     </tag-config>
     <tag-config>
         <taglib>
-            <tag-uri>/WEB-INF/tlds/Logged_in_patient_record.tld</tag-uri>
-            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/Logged_in_patient_record.tld</tag-location>
+            <tag-uri>/WEB-INF/tlds/Logged_in_patient.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/Logged_in_patient.tld</tag-location>
         </taglib>
     </tag-config>
     <tag-config>
@@ -178,6 +178,24 @@
         <taglib>
             <tag-uri>/WEB-INF/tlds/EmailResponse.tld</tag-uri>
             <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/EmailResponse.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/EmailResponse.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/EmailResponse.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/target.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/target.tld</tag-location>
+        </taglib>
+    </tag-config>
+    <tag-config>
+        <taglib>
+            <tag-uri>/WEB-INF/tlds/certificate.tld</tag-uri>
+            <tag-location>D:/vaccinationTracker/web/WEB-INF/tlds/certificate.tld</tag-location>
         </taglib>
     </tag-config>
 </web-app>

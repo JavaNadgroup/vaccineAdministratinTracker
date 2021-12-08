@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="/WEB-INF/tlds/Logged_in_patient_record.tld" prefix="vaccination" %>
+<%@taglib uri="/WEB-INF/tlds/Logged_in_patient.tld" prefix="vaccination" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,13 +79,8 @@
                         </a>
                     </li>
                     <li class="mr-3 flex-1">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
+                        <a href="Certificate.jsp" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
                             <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Certificate</span>
-                        </a>
-                    </li>
-                    <li class="mr-3 flex-1">
-                        <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-purple-500">
-                            <i class="fa fa-envelope pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Messages</span>
                         </a>
                     </li>
                 </ul>
@@ -101,9 +96,9 @@
                     <h3 class="font-bold pl-2">home</h3>
                 </div>
             </div>
-
-            <div class="flex flex-wrap">
-                <vaccination:select table="patients" name="${name}" nin="${name}"/>
+            <div class="mt-5 ml-5">
+                <h1 class="text-2xl font-bold mb-3">This is Your Patient Record</h1>
+                <vaccination:select name="${name}" nin="${nin}"/>
             </div>
         </div>
     </div>
